@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LinkSnap — URL Shortener</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <main class="shell">
+    <nav class="nav"><a class="brand" href="/"><span class="brand-mark">↗</span> LinkSnap</a><span class="nav-note">Simple links. Serious reach.</span></nav>
+    <section class="hero">
+      <div class="eyebrow"><span></span> Fast, free, and yours</div>
+      <h1>Turn long links into<br><em>tiny connections.</em></h1>
+      <p class="hero-copy">Create memorable short URLs in seconds. Share less, reach more, and keep your links organized.</p>
+      <form id="shorten-form" class="shorten-card">
+        <label for="url">Paste your long URL</label>
+        <div class="input-row"><input id="url" name="url" type="url" placeholder="https://example.com/your-very-long-link" autocomplete="url" required><button type="submit" id="submit-button">Shorten link <span>→</span></button></div>
+        <div class="custom-row"><label class="checkbox-label"><input id="custom-toggle" type="checkbox"> Use a custom code</label><input id="custom-code" name="custom_code" type="text" placeholder="e.g. summer-sale" minlength="4" maxlength="32" disabled></div>
+        <p id="message" class="message" role="status"></p>
+      </form>
+      <section id="result" class="result-card hidden"><div class="result-label">Your shortened link is ready</div><div class="result-link"><a id="short-url" href="#" target="_blank" rel="noopener"></a><button id="copy-button" type="button">Copy</button></div><p id="original-url" class="original"></p></section>
+    </section>
+    <section class="recent-section"><div class="section-heading"><div><div class="eyebrow"><span></span> Your workspace</div><h2>Recent links</h2></div><button id="refresh-button" class="ghost-button" type="button">Refresh ↻</button></div><div id="links-list" class="links-list"><div class="empty-state">No links yet — your recent links will appear here.</div></div></section>
+    <footer><span>LinkSnap</span><span>Built with Flask + SQLite</span></footer>
+  </main>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
