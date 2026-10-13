@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # LinkSnap — Simple URL Shortener
 
 A polished URL shortener built with **Flask** and **SQLite**. It includes a responsive frontend, JSON API, custom short codes, click tracking, and a redirect route.
@@ -62,3 +63,6 @@ pytest -q
 ## Production notes
 
 For production, run behind a WSGI server such as Gunicorn, use a persistent database volume, add rate limiting, and configure trusted proxy/host settings.
+=======
+# URL-Shortener
+>>>>>>> def50db93a0c7b17a9d95ac2d9006d60fee23c2a
